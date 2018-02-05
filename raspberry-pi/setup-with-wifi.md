@@ -8,7 +8,7 @@ Useful for a headless setup, when you don't have a screen, keyboard, or ethernet
 
   (Read [ssh docs](https://www.raspberrypi.org/documentation/remote-access/ssh/) for background)
 
-- Adding [file `wpa_supplicant.conf`](files-for-boot-partiton/wpa_supplicant.conf) to the boot image will
+- Adding [file `wpa_supplicant.conf`](files-for-boot-partition/wpa_supplicant.conf) to the boot image will
 *configure wifi on the first boot*:
 
   Keep these three lines at the top (set your own country code):
