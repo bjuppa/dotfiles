@@ -4,11 +4,11 @@ Useful for a headless setup, when you don't have a screen, keyboard, or ethernet
 - Download [latest image of Raspbian](https://www.raspberrypi.org/downloads/raspbian/) 
 - Burn image to SD-card using [Etcher](https://etcher.io)
 
-- Adding [empty file `ssh`](raspberry-pi/files-for-boot-partion/ssh) to the boot image will *enable ssh on the first boot*.
+- Adding [empty file `ssh`](files-for-boot-partion/ssh) to the boot image will *enable ssh on the first boot*.
 
   (Read [ssh docs](https://www.raspberrypi.org/documentation/remote-access/ssh/) for background)
 
-- Adding [file `wpa_supplicant.conf`](raspberry-pi/files-for-boot-partion/wpa_supplicant.conf) to the boot image will
+- Adding [file `wpa_supplicant.conf`](files-for-boot-partion/wpa_supplicant.conf) to the boot image will
 *configure wifi on the first boot*:
 
   Keep these three lines at the top (set your own country code):
