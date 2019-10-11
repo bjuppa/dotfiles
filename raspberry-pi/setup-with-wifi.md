@@ -1,4 +1,5 @@
 # Raspberry Pi setup with wifi
+
 Useful for a headless setup, when you don't have a screen, keyboard, or ethernet cable.
 
 - Download [latest image of Raspbian](https://www.raspberrypi.org/downloads/raspbian/) 
@@ -45,3 +46,22 @@ to bottom of `wpa_supplicant.conf` on the boot image.
   …or try `arp -a`
 
 - Complete [Security setup](https://www.raspberrypi.org/documentation/configuration/security.md)
+
+## Installing other useful tools
+
+### The `locate` command
+
+- `sudo apt-get install mlocate`
+- `sudo updatedb`
+
+### DHCP Server
+
+If you need the ethernet port of the Raspberry Pi to expose a DHCP server:
+
+- Configure `eth0` to use (or fallback to) static IP `10.254.239.1/27` by editing `/etc/dhcpcd.conf`
+- Connect an ethernet cable to another network device and run `ip -4 addr show` to check that the static IP has been set
+- Install `dhcpd` using `sudo apt-get install isc-dhcp-server`
+- Edit `/etc/dhcp/dhcpd.conf` and configure at least one `subnet` for `10.254.239.0/27` with a `range` *not* containing `10.254.239.1`
+- Edit `/etc/default/isc-dhcp-server` to uncomment both `DHCPDv4_CONF` and `DHCPDv4_PID`, and add `eth0` to `INTERFACESv4`
+- Test the config with `dhcpd -t`
+- Start the service using `sudo service isc-dhcp-server start`
