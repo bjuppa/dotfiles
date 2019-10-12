@@ -1,6 +1,7 @@
 # Laravel websites
 
-- Set up [Laravel's scheduled tasks](https://laravel.com/docs/scheduling) to run as the webserver user: `crontab -e -u www-data`
+- Set up [Laravel's scheduled tasks](https://laravel.com/docs/scheduling) to run as the webserver user:
+  `sudo crontab -e -u www-data`
 - Add these bits to nginx website configuration in `/etc/nginx/sites-available/`:
 
         # Headers (from Laravel docs)
