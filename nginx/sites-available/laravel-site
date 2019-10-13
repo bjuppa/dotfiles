@@ -1,0 +1,18 @@
+# This is a template for a Laravel site config
+
+# Get cache configuration map from snippets
+include snippets/expires-map.conf;
+
+server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+
+	root /var/www/SITENAME/current/public;
+
+	server_name _;
+
+  # Apply the cache configuration map
+	expires $expires;
+
+	include snippets/laravel.conf;
+}
