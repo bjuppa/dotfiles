@@ -15,4 +15,12 @@ server {
 	expires $expires;
 
 	include snippets/laravel.conf;
+
+  # HSTS can be enabled after https:
+  # add_header Strict-Transport-Security "max-age=15768000" always;
+  # ...or for all subdomains too:
+  # add_header Strict-Transport-Security "max-age=15768000; includeSubDomains" always;
+
+  # Don't send the referrer header when navigating from HTTPS to HTTP
+  # add_header Referrer-Policy no-referrer-when-downgrade;
 }
