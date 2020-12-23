@@ -4,23 +4,23 @@
 include snippets/expires-map.conf;
 
 server {
-	listen 80 default_server;
-	listen [::]:80 default_server;
+    listen 80 default_server;
+    listen [::]:80 default_server;
 
-	root /var/www/SITENAME/current/public;
+    root /var/www/SITENAME/current/public;
 
-	server_name _;
+    server_name _;
 
-  # Apply the cache configuration map
-	expires $expires;
+    # Apply the cache configuration map
+    expires $expires;
 
-	include snippets/laravel.conf;
+    include snippets/laravel.conf;
 
-  # HSTS can be enabled after https:
-  # add_header Strict-Transport-Security "max-age=15768000" always;
-  # ...or for all subdomains too:
-  # add_header Strict-Transport-Security "max-age=15768000; includeSubDomains" always;
+    # HSTS can be enabled after https:
+    # add_header Strict-Transport-Security "max-age=15768000" always;
+    # ...or for all subdomains too:
+    # add_header Strict-Transport-Security "max-age=15768000; includeSubDomains" always;
 
-  # Don't send the referrer header when navigating from HTTPS to HTTP
-  # add_header Referrer-Policy no-referrer-when-downgrade;
+    # Don't send the referrer header when navigating from HTTPS to HTTP
+    # add_header Referrer-Policy no-referrer-when-downgrade;
 }
