@@ -15,3 +15,5 @@ Inside `~/Code` and `~/Sites` directories, ask if each `node_modules` should be 
 ```sh
 sudo find -E /Users -type d -name node_modules -regex "/Users/[^/]+/(Code|Sites)/.*" -prune -ok tmutil addexclusion "{}" \;
 ```
+
+Find more tips in [this article](https://www.heissenberger.at/en/blog/macos-exclude-node_modules-folder-from-time-machine/).
